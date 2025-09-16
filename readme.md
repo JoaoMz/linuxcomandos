@@ -239,8 +239,23 @@ mysql -u root -p nome_banco < /home/Usuario/Downloads/nome-banco.sql
 ## alterar arquivos para acesso local
 ```bash
 sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+# exemplo
+<VirtualHost *:80>
+        ServerName nome.local
+        ServerAlias apelido.local
+        DocumentRoot /var/www/html/nome_projeto/public
+</VirtualHost>
+
+
 sudo nano /etc/hosts
+127.0.1.1       nome.local apelido.local
+
+# reinicia os serviços do apache
 systemctl restart apache2
+
+
+
 ```
 
 ## dar permissão para endereços web amigáveis

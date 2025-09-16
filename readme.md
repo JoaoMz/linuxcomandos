@@ -215,6 +215,26 @@ systemctl restart apache2
 sudo chmod -R 777 /var/www/html/
 sudo chmod -R 755 /var/www/html/phpmyadmin
 ```
+## Clonar Projetos
+```bash
+git clone link_projeto
+
+# criar env
+cp .env.example .env
+# configurar env (nome e senha do banco)
+
+# instalar dependencias
+composer install
+
+# gerar chave
+php artisan key:generate
+
+# importar o banco
+mysql -u root -p nome_banco < /home/Usuario/Downloads/nome-banco.sql
+
+
+```
+
 
 ## alterar arquivos para acesso local
 ```bash
